@@ -1,0 +1,27 @@
+<div class="table">
+    <table class="tableClass">
+        <caption>Employee Table</caption>
+        <thead>
+            <tr >
+                <th appHighlight>employeeId</th>
+                <th appHighlight>employeeName</th>
+                <th appHighlight>employeeAge</th>
+            </tr>
+        </thead>
+        <tbody class="tableBody">
+            <tr  *ngFor="let emp of employeeDatas;" >
+                <td appHighlight (dblclick)="hello(emp.employeeId,'employeeId')" id ={{emp.employeeId}} >{{emp.employeeId}}</td>
+                <td appHighlight  id ={{emp.employeeId}}>{{emp.employeeName}}</td>
+                <td appHighlight  id ={{emp.employeeId}}>{{emp.employeeAge}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+    table,th,td{
+        border:1px solid;
+        /* border-collapse: collapse;  */
+    }
+</style>
