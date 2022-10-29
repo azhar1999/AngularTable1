@@ -2,22 +2,42 @@
     <table class="tableClass">
         <caption>Employee Table</caption>
         <thead>
-            <tr >
+            <tr>
                 <th appHighlight>employeeId</th>
                 <th appHighlight>employeeName</th>
                 <th appHighlight>employeeAge</th>
             </tr>
         </thead>
-        <tbody class="tableBody">
-            <tr  *ngFor="let emp of employeeDatas;" >
-                <td appHighlight (dblclick)="hello(emp.employeeId,'employeeId')" id ={{emp.employeeId}} >{{emp.employeeId}}</td>
-                <td appHighlight  id ={{emp.employeeId}}>{{emp.employeeName}}</td>
-                <td appHighlight  id ={{emp.employeeId}}>{{emp.employeeAge}}</td>
+        <tbody>
+            <tr *ngFor="let emp of employeeDatas;index as i" >
+                <td appHighlight (dblclick)="emp.visible=!emp.visible">
+                    <div class="employeeId" *ngIf="emp.visible===false">{{emp.employeeId}}</div>
+                    <div class="employeeIdInput" *ngIf="emp.visible" >
+                        <input type="text"  #input>
+                        <button (click)="changeEmpId(input.value,i)">Save</button>
+                    </div>
+                </td>
+                <td appHighlight (dblclick)="emp.visible=!emp.visible">
+                    <div class="employeeName" *ngIf="emp.visible===false">{{emp.employeeName}}</div>
+                    <div class="employeeNameInput" *ngIf="emp.visible">
+                        <input type="text" #input2>
+                        <button (click)="changeEmpName(input2.value,i)">Save</button>
+                    </div>
+                </td>
+                <td appHighlight (dblclick)="emp.visible=!emp.visible">
+                    <div class="employeeAge" *ngIf="emp.visible===false">{{emp.employeeAge}}</div>
+                    <div class="employeeAgeInput" *ngIf="emp.visible">
+                        <input type="text" #input3>
+                        <button (click)="changeEmpAge(input3.value,i)">Save</button>
+                    </div>
+                </td>
+
 
             </tr>
         </tbody>
     </table>
 </div>
+
 
 <style>
     table,th,td{
