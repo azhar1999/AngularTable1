@@ -31,19 +31,15 @@ export class TablecompComponent {
 
   changeEmpId(val:any,i:any){
     this.employeeDatas[i].employeeId=val;
-    this.employeeDatas[i].visible=false
-    
+    this.employeeDatas[i].visible=false  
   }
   changeEmpName(val:any,i:any){
     this.employeeDatas[i].employeeName=val;
     this.employeeDatas[i].visible=false
-    
   }
   changeEmpAge(val:any,i:any){
     this.employeeDatas[i].employeeAge=val;
     this.employeeDatas[i].visible=false
-    
-    
   }
   
 
