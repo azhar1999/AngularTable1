@@ -1,0 +1,73 @@
+.table{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+.tableClass{
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tableClass thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+    border-top:2px solid #009879 ;
+    border-left:2px solid #009879 ;
+    border-right:2px solid #009879 ;
+}
+
+.tableClass th,
+.tableClass td {
+    padding: 12px 15px;
+    text-align: center;
+    border: #009879;
+}
+
+.tableClass tbody tr {
+    border-bottom: 1px solid #dddddd;
+    
+}
+
+.tableClass tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+    
+}
+
+.tableClass tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+    border-left:2px solid #009879;
+    border-right:2px solid #009879
+}
+.tableClass tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+    border-left:2px solid #009879;
+    border-right:2px solid #009879
+}
+
+
+
+button{
+    background-color: #009879;
+    color:white;
+   
+}
+
+.instructions{
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+}
+
+
+
+
+
+

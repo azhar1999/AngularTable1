@@ -13,8 +13,6 @@ export class TablecompComponent {
   // ngOnInit(): void {
   // }
 
-  // color="yellow";
-
   employeeDatas = [
     { employeeId: "1", employeeName: "Athila Rahim", employeeAge: "23" ,visible:false},
     { employeeId: "2", employeeName: "Akshay Poosan", employeeAge: "26",visible:false },
@@ -29,21 +27,12 @@ export class TablecompComponent {
 
   ]
 
-  changeEmpId(val:any,i:any){
-    this.employeeDatas[i].employeeId=val;
+  changeEmp(val1:any,val2:any,val3:any,i:any){
+    this.employeeDatas[i].employeeId=val1;
+    this.employeeDatas[i].employeeName=val2;
+    this.employeeDatas[i].employeeAge=val3;
     this.employeeDatas[i].visible=false  
   }
-  changeEmpName(val:any,i:any){
-    this.employeeDatas[i].employeeName=val;
-    this.employeeDatas[i].visible=false
-  }
-  changeEmpAge(val:any,i:any){
-    this.employeeDatas[i].employeeAge=val;
-    this.employeeDatas[i].visible=false
-  }
-  
-
-
 }
 
 

@@ -1,6 +1,6 @@
 <div class="table">
     <table class="tableClass">
-        <caption>Employee Table</caption>
+        <caption >Employee Table</caption>
         <thead>
             <tr>
                 <th appHighlight>employeeId</th>
@@ -8,32 +8,33 @@
                 <th appHighlight>employeeAge</th>
             </tr>
         </thead>
-        <tbody>
-            <tr *ngFor="let emp of employeeDatas;index as i" >
-                <td appHighlight (dblclick)="emp.visible=!emp.visible">
-                    <div class="employeeId" *ngIf="emp.visible===false">{{emp.employeeId}}</div>
-                    <div class="employeeIdInput" *ngIf="emp.visible" >
-                        <input type="text"  #input>
-                        <button (click)="changeEmpId(input.value,i)">Save</button>
+        <tbody *ngFor="let emp of employeeDatas;index as i" >
+            <tr (dblclick)="emp.visible=!emp.visible">
+                <td appHighlight >
+                    <div class="employeeId" [hidden]="emp.visible">{{emp.employeeId}}</div>
+                    <div class="employeeIdInput" [hidden]="!emp.visible" >
+                        <input type="text"  value="{{emp.employeeId}}" #input>
                     </div>
                 </td>
-                <td appHighlight (dblclick)="emp.visible=!emp.visible">
-                    <div class="employeeName" *ngIf="emp.visible===false">{{emp.employeeName}}</div>
-                    <div class="employeeNameInput" *ngIf="emp.visible">
-                        <input type="text" #input2>
-                        <button (click)="changeEmpName(input2.value,i)">Save</button>
+                <td appHighlight>
+                    <div class="employeeName" [hidden]="emp.visible">{{emp.employeeName}}</div>
+                    <div class="employeeNameInput" [hidden]="!emp.visible">
+                        <input type="text" value="{{emp.employeeName}}"#input2>
                     </div>
                 </td>
-                <td appHighlight (dblclick)="emp.visible=!emp.visible">
-                    <div class="employeeAge" *ngIf="emp.visible===false">{{emp.employeeAge}}</div>
-                    <div class="employeeAgeInput" *ngIf="emp.visible">
-                        <input type="text" #input3>
-                        <button (click)="changeEmpAge(input3.value,i)">Save</button>
+                <td appHighlight>
+                    <div class="employeeAge" [hidden]="emp.visible">{{emp.employeeAge}}</div>
+                    <div class="employeeAgeInput" [hidden]="!emp.visible">
+                        <input type="text" value="{{emp.employeeAge}}" #input3>
+                        <button (click)="changeEmp(input.value,input2.value,input3.value,i)">Save</button>
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
+</div>
+<div class="instructions">
+    Click Datas to Edit
 </div>
 
 
