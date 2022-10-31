@@ -11,7 +11,7 @@
         <tbody *ngFor="let emp of employeeDatas;index as i" >
             <tr >
                 <td appHighlight (dblclick)="emp.visible='id'" >
-                    <div class="employeeId" *ngIf="emp.visible!=null && emp.visible!='id'">{{emp.employeeId}}</div>
+                    <div class="employeeId" *ngIf="emp.visible!='id'">{{emp.employeeId}}</div>
                     <div class="employeeIdInput" *ngIf="emp.visible=='id'" >
                         <input type="text"  value="{{emp.employeeId}}" #input>
                         <button (click)="changeEmpId(input.value,i)">Save</button>
@@ -19,7 +19,7 @@
                     </div>
                 </td>
                 <td appHighlight (dblclick)="emp.visible='name'">
-                    <div class="employeeName" *ngIf="emp.visible!=null && emp.visible!='name'">{{emp.employeeName}}</div>
+                    <div class="employeeName" *ngIf="emp.visible!='name'">{{emp.employeeName}}</div>
                     <div class="employeeNameInput" *ngIf="emp.visible=='name'">
                         <input type="text" value="{{emp.employeeName}}"#input2>
                         <button (click)="changeEmpName(input2.value,i)">Save</button>
@@ -27,10 +27,10 @@
                     </div>
                 </td>
                 <td appHighlight (dblclick)="emp.visible='age'">
-                    <div class="employeeAge" *ngIf="emp.visible!=null && emp.visible!='age'">{{emp.employeeAge}}</div>
+                    <div class="employeeAge" *ngIf="emp.visible!='age'">{{emp.employeeAge}}</div>
                     <div class="employeeAgeInput" *ngIf="emp.visible=='age'">
                         <input type="text" value="{{emp.employeeAge}}" #input3>
-                        <button (click)="changeEmpId(input3.value,i)">Save</button>
+                        <button (click)="changeEmpAge(input3.value,i)">Save</button>
                     </div>
                 </td>
             </tr>

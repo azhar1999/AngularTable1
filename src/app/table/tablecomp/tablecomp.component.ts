@@ -39,7 +39,6 @@ export class TablecompComponent {
     this.employeeDatas[i].visible=''  
   }
   changeEmpAge(val1:any,i:any){
-
     this.employeeDatas[i].employeeAge=val1;
     this.employeeDatas[i].visible=''  
   }
