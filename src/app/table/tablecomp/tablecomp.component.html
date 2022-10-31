@@ -1,50 +1,77 @@
 <div class="table">
+
     <table class="tableClass">
+
         <caption >Employee Table</caption>
+
         <thead>
+
             <tr>
+
                 <th appHighlight>employeeId</th>
+
                 <th appHighlight>employeeName</th>
+
                 <th appHighlight>employeeAge</th>
+
             </tr>
+
         </thead>
-        <tbody *ngFor="let emp of employeeDatas;index as i" >
-            <tr >
-                <td appHighlight (dblclick)="emp.visible='id'" >
-                    <div class="employeeId" *ngIf="emp.visible!='id'">{{emp.employeeId}}</div>
-                    <div class="employeeIdInput" *ngIf="emp.visible=='id'" >
+
+        <tbody *ngFor="let emp of employeeDatas;index as i;" >
+
+            <tr>
+
+                <td appHighlight (dblclick)="toggle(emp.employeeId,'ID')" >
+
+                    <div class="employeeId" *ngIf="this.togglevariable!=emp.employeeId+'ID'">{{emp.employeeId}}</div>
+
+                    <div class="employeeIdInput" *ngIf="this.togglevariable==emp.employeeId+'ID'" >
+
                         <input type="text"  value="{{emp.employeeId}}" #input>
+
                         <button (click)="changeEmpId(input.value,i)">Save</button>
 
                     </div>
+
                 </td>
-                <td appHighlight (dblclick)="emp.visible='name'">
-                    <div class="employeeName" *ngIf="emp.visible!='name'">{{emp.employeeName}}</div>
-                    <div class="employeeNameInput" *ngIf="emp.visible=='name'">
-                        <input type="text" value="{{emp.employeeName}}"#input2>
+
+                <td appHighlight (dblclick)="toggle(emp.employeeId,'NAME')">
+
+                    <div class="employeeName" *ngIf="this.togglevariable!=emp.employeeId+'NAME'">{{emp.employeeName}}</div>
+
+                    <div class="employeeNameInput" *ngIf="this.togglevariable==emp.employeeId+'NAME'">
+
+                        <input type="text" value="{{emp.employeeName}}" #input2>
+
                         <button (click)="changeEmpName(input2.value,i)">Save</button>
 
                     </div>
+
                 </td>
-                <td appHighlight (dblclick)="emp.visible='age'">
-                    <div class="employeeAge" *ngIf="emp.visible!='age'">{{emp.employeeAge}}</div>
-                    <div class="employeeAgeInput" *ngIf="emp.visible=='age'">
+
+                <td appHighlight (dblclick)="toggle(emp.employeeId,'AGE')">
+
+                    <div class="employeeAge" *ngIf="this.togglevariable!=emp.employeeId+'AGE'">{{emp.employeeAge}}</div>
+                    
+                    <div class="employeeAgeInput" *ngIf="this.togglevariable==emp.employeeId+'AGE'">
+
                         <input type="text" value="{{emp.employeeAge}}" #input3>
+
                         <button (click)="changeEmpAge(input3.value,i)">Save</button>
+
                     </div>
+
                 </td>
+
             </tr>
+
         </tbody>
+
     </table>
+
 </div>
+
 <div class="instructions">
     Click Datas to Edit
 </div>
-
-
-<style>
-    table,th,td{
-        border:1px solid;
-        /* border-collapse: collapse;  */
-    }
-</style>
