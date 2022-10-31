@@ -13,7 +13,7 @@ export class TablecompComponent {
   // ngOnInit(): void {
   // }
 
-   togglevariable="";
+   togglevariable="";   //toggle variable is set so that only one edit takes place at a time
 
   employeeDatas = [
     { employeeId: "1", employeeName: "Athila Rahim", employeeAge: "23" },
